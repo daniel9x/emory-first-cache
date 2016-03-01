@@ -1,5 +1,7 @@
 package edu.emory.first.cache.data;
 
+import static org.junit.Assert.*;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -7,14 +9,29 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import edu.emory.first.cache.model.ProfessionalActivityType;
 
 
 public class EFCHibernateTest {
-
-	public static void main(String[] args) {
-
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("efcEntityManagerLocal");
+	
+	EntityManagerFactory emf;
+	
+	@Before
+	public void init() {
+		emf = Persistence.createEntityManagerFactory("efcEntityManagerLocal");
+	}
+	
+	@After
+	public void destroy(){
+		emf.close();
+	}
+	
+	@Test
+	public void testConnection() {
 
 		EntityManager em = emf.createEntityManager();
 
@@ -22,7 +39,7 @@ public class EFCHibernateTest {
         query.getResultList();
         List<ProfessionalActivityType> professionalActivityTypes = query.getResultList();
 		
-		System.out.println(professionalActivityTypes.size());		
+		assertNotNull(professionalActivityTypes);	
 	}
 
 }

@@ -9,25 +9,25 @@
 	<packaging>war</packaging>
 	<name>JBoss EAP Quickstart: hibernate4</name>
 	<description>JBoss EAP Quickstart: Application that uses Hibernate 4</description>
-	
+
 	<repositories>
-	<repository>
-		<id>redhat-ga-repository</id>
-		<name>Red Hat GA repository</name>
-		<url>http://maven.repository.redhat.com/ga/</url>
-		<releases>
-			<enabled>true</enabled>
-			<updatePolicy>never</updatePolicy>
-		</releases>
-		<snapshots>
-			<enabled>false</enabled>
-			<updatePolicy>daily</updatePolicy>
-		</snapshots>
-	</repository>
 		<repository>
 			<id>nexus</id>
 			<name>Emory Internal Repo</name>
 			<url>http://mavenrepo.service.emory.edu/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>redhat-ga-repository</id>
+			<name>Red Hat GA repository</name>
+			<url>http://maven.repository.redhat.com/ga/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
 		</repository>
 	</repositories>
 	<licenses>
@@ -78,6 +78,12 @@
 	</dependencyManagement>
 
 	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
