@@ -35,6 +35,10 @@ public class ProfessionalActivityType implements Serializable {
 	public void setHeadingPlural(String headingPlural) {
 		this.headingPlural = headingPlural;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 }
 
