@@ -34,7 +34,6 @@ public class EFCHibernateTest {
 	@Test
 	public void testCreateProfessionalActivityType() {
 		ProfessionalActivityType pat = new ProfessionalActivityType();
-		ProfessionalActivityType.getSerialversionuid();
 		pat.setId(1L);
 		pat.setHeadingPlural("test");
 		pat.getId();

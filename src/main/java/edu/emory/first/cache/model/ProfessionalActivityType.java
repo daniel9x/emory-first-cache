@@ -7,11 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "\"Professional Activity Type\"")
 public class ProfessionalActivityType implements Serializable {
-	
-    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "ID")
@@ -35,10 +34,5 @@ public class ProfessionalActivityType implements Serializable {
 	public void setHeadingPlural(String headingPlural) {
 		this.headingPlural = headingPlural;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
 }
 
