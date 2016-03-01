@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.emory.first.cache.model.ProfessionalActivityType;
+import edu.emory.first.cache.model.User;
 import edu.emory.first.cache.util.HibernateLogUtil;
 
 
@@ -32,7 +33,7 @@ public class EFCHibernateTest {
 	}
 	
 	@Test
-	public void testConnection() {
+	public void testGetProfessionalActivityType() {
 
 		EntityManager em = emf.createEntityManager();
 
@@ -41,6 +42,18 @@ public class EFCHibernateTest {
         List<ProfessionalActivityType> professionalActivityTypes = query.getResultList();
 		
 		assertNotNull(professionalActivityTypes);	
+	}
+	
+	@Test
+	public void testGetUser() {
+
+		EntityManager em = emf.createEntityManager();
+
+		TypedQuery<User> query = em.createQuery("select u from User u", User.class);
+        query.getResultList();
+        List<User> users = query.getResultList();
+		
+		assertNotNull(users);	
 	}
 
 }

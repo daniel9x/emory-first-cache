@@ -23,21 +23,6 @@ public class ProfessionalActivityType implements Serializable {
 
     @Column(name = "\"Heading Plural\"")
     private String headingPlural;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-	public String getHeadingPlural() {
-		return headingPlural;
-	}
-
-	public void setHeadingPlural(String headingPlural) {
-		this.headingPlural = headingPlural;
-	}
+    
 }
 
