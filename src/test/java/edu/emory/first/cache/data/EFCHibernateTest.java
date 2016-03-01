@@ -33,6 +33,14 @@ public class EFCHibernateTest {
 	}
 	
 	@Test
+	public void testCreateProfessionalActivityType() {
+		ProfessionalActivityType pat = new ProfessionalActivityType();
+		pat.getId();
+		pat.getHeadingPlural();
+	}
+	
+	
+	@Test
 	public void testGetProfessionalActivityType() {
 
 		EntityManager em = emf.createEntityManager();
