@@ -7,10 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/*The Model uses JPA Entity as well as Hibernate Validators
- * 
- */
-
 @Entity
 @Table(name = "\"Professional Activity Type\"")
 public class ProfessionalActivityType implements Serializable {
@@ -30,6 +26,14 @@ public class ProfessionalActivityType implements Serializable {
 
 	public String getHeadingPlural() {
 		return headingPlural;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setHeadingPlural(String headingPlural) {
+		this.headingPlural = headingPlural;
 	}
 	
 }
