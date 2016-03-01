@@ -9,7 +9,21 @@
 	<packaging>war</packaging>
 	<name>JBoss EAP Quickstart: hibernate4</name>
 	<description>JBoss EAP Quickstart: Application that uses Hibernate 4</description>
+	
 	<repositories>
+	<repository>
+		<id>redhat-ga-repository</id>
+		<name>Red Hat GA repository</name>
+		<url>http://maven.repository.redhat.com/ga/</url>
+		<releases>
+			<enabled>true</enabled>
+			<updatePolicy>never</updatePolicy>
+		</releases>
+		<snapshots>
+			<enabled>false</enabled>
+			<updatePolicy>daily</updatePolicy>
+		</snapshots>
+	</repository>
 		<repository>
 			<id>nexus</id>
 			<name>Emory Internal Repo</name>
