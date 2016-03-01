@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.emory.first.cache.model.ProfessionalActivityType;
+import edu.emory.first.cache.util.HibernateLogUtil;
 
 
 public class EFCHibernateTest {
