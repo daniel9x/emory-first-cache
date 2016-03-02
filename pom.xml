@@ -120,7 +120,7 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 		</dependency>
-				<dependency>
+		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<scope>provided</scope>
@@ -263,6 +263,11 @@
 					</reportSet>
 				</reportSets>
 				<configuration>
+					<instrumentation>
+						<excludes>
+							<exclude>edu/emory/first/cache/util/*.class</exclude>
+						</excludes>
+					</instrumentation>
 					<formats>
 						<format>html</format>
 						<format>xml</format>
