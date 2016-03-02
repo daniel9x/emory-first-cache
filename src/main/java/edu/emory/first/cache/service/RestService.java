@@ -10,6 +10,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 import edu.emory.first.cache.model.ProfessionalActivityType;
+import edu.emory.first.cache.util.TestUtil;
 
 @Path("/")
 public class RestService {
@@ -17,11 +18,17 @@ public class RestService {
 	@Inject
     private EntityManager em;
 	
+	public RestService() {
+		if (TestUtil.isTestMode) {
+			em = new TestUtil().returnLocalEntityManager();
+		}
+	}
+	
 	@GET
     @Path("/test")
     @Produces({ "application/json" })
     public String getTest() {
-		return "Hey!";
+		return "Success!";
     }
 
 	@GET
