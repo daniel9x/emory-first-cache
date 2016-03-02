@@ -265,7 +265,7 @@
 				<configuration>
 					<instrumentation>
 						<excludes>
-							<exclude>edu/emory/first/cache/util/*.class</exclude>
+							<exclude>edu/emory/first/cache/util/HibernateLogUtil.class</exclude>
 						</excludes>
 					</instrumentation>
 					<formats>
