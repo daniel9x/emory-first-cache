@@ -4,6 +4,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import edu.emory.first.cache.model.ProfessionalActivityType;
 import edu.emory.first.cache.util.TestUtil;
 
 
@@ -27,6 +28,13 @@ public class RestServiceTest {
     @Test
     public void testGetProfessionalActivityTypes() {
     	new RestService().getProfessionalActivityTypes();
+    }
+    
+    @Test
+    public void testProfessionalActivityTypeObject() {
+    	ProfessionalActivityType pat = new ProfessionalActivityType();
+    	pat.getId();
+    	pat.getHeadingPlural();
     }
     
 }
