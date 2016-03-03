@@ -19,6 +19,13 @@ public class RestServiceTest {
 	public static void destroy() {
 		TestUtil.isTestMode = false;
 	}
+	
+	@Test
+	public void testIsTestModeCondition() {
+		TestUtil.isTestMode = false;
+		new RestService();
+		TestUtil.isTestMode = true;
+	}
     
     @Test
     public void testRegister() {
