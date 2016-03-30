@@ -5,8 +5,19 @@
 	<persistence-unit name="emoryFirstCacheEntityManager" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/datasources/EmoryFirstCacheDS</jta-data-source>
-		<class>edu.emory.first.cache.model.User</class>
+		<class>edu.emory.first.cache.model.ProfessionalActivity</class>
 		<class>edu.emory.first.cache.model.ProfessionalActivityType</class>
+		<class>edu.emory.first.cache.model.Publication</class>
+		<class>edu.emory.first.cache.model.PublicationType</class>
+		<class>edu.emory.first.cache.model.PublicationUserRelationship</class>
+		<class>edu.emory.first.cache.model.User</class>
+		<class>edu.emory.first.cache.model.UserAcademicAppointment</class>
+		<class>edu.emory.first.cache.model.UserDegree</class>
+		<class>edu.emory.first.cache.model.UserNonAcademicEmployment</class>
+		<class>edu.emory.first.cache.model.UserPostgraduateTraining</class>
+		<class>edu.emory.first.cache.model.UserRecord</class>
+		<class>edu.emory.first.cache.model.UserPublicationPreference</class>
+		<class>edu.emory.first.cache.model.UserWebAddress</class>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class, hbm" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2008Dialect" />

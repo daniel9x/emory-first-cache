@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 
 public class JSONPRequestFilter implements Filter {
-
+	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		if (!(request instanceof HttpServletRequest)) {
 			throw new ServletException("This filter can " +
@@ -38,14 +38,13 @@ public class JSONPRequestFilter implements Filter {
 					};
 				}
 			};
-
-			responseWrapper.setContentType("text/javascript");
+			
 			chain.doFilter(request, responseWrapper);
-			response.getOutputStream().write(baos.toByteArray());
-
+			response.setCharacterEncoding("UTF-8");
 			response.setContentType("text/javascript");
-		}
-		else {
+			response.getOutputStream().write(baos.toByteArray());
+			
+		} else {
 			chain.doFilter(request, response);
 		}
 	}
@@ -60,12 +59,8 @@ public class JSONPRequestFilter implements Filter {
 	}
 
 	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
-	}
+	public void init(FilterConfig filterConfig) throws ServletException {}
 
 	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
+	public void destroy() {}
 }

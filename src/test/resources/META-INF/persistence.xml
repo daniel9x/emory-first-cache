@@ -5,17 +5,29 @@
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="efcEntityManagerLocal">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>edu.emory.first.cache.model.User</class>
+		<class>edu.emory.first.cache.model.ProfessionalActivity</class>
 		<class>edu.emory.first.cache.model.ProfessionalActivityType</class>
+		<class>edu.emory.first.cache.model.ProfessionalActivityUserRelationship</class>
+		<class>edu.emory.first.cache.model.Publication</class>
+		<class>edu.emory.first.cache.model.PublicationType</class>
+		<class>edu.emory.first.cache.model.PublicationUserRelationship</class>
+		<class>edu.emory.first.cache.model.User</class>
+		<class>edu.emory.first.cache.model.UserAcademicAppointment</class>
+		<class>edu.emory.first.cache.model.UserDegree</class>
+		<class>edu.emory.first.cache.model.UserNonAcademicEmployment</class>
+		<class>edu.emory.first.cache.model.UserPostgraduateTraining</class>
+		<class>edu.emory.first.cache.model.UserRecord</class>
+		<class>edu.emory.first.cache.model.UserPublicationPreference</class>
+		<class>edu.emory.first.cache.model.UserWebAddress</class>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class, hbm" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2008Dialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2012Dialect" />
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="false" />
 			<property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 			<property name="hibernate.connection.username" value="efcapo" />
 			<property name="hibernate.connection.url" value="jdbc:sqlserver://rhssqlprod1:1433;databaseName=elementsreporting" />
-			<property name="hibernate.connection.password" value="${credential}" />
+			<property name="hibernate.connection.password" value="abc12345" />
 		</properties>
 	</persistence-unit>
 </persistence>
