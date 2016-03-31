@@ -27,7 +27,7 @@
 			<property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 			<property name="hibernate.connection.username" value="efcapo" />
 			<property name="hibernate.connection.url" value="jdbc:sqlserver://rhssqlprod1:1433;databaseName=elementsreporting" />
-			<property name="hibernate.connection.password" value="abc12345" />
+			<property name="hibernate.connection.password" value="${credential}" />
 		</properties>
 	</persistence-unit>
 </persistence>
