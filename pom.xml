@@ -154,6 +154,12 @@
 	<build>
 		<!-- Maven will append the version to the finalName (which is the name given to the generated war, and 
 			hence the context root) -->
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
