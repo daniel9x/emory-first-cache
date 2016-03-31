@@ -7,7 +7,6 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>edu.emory.first.cache.model.ProfessionalActivity</class>
 		<class>edu.emory.first.cache.model.ProfessionalActivityType</class>
-		<class>edu.emory.first.cache.model.ProfessionalActivityUserRelationship</class>
 		<class>edu.emory.first.cache.model.Publication</class>
 		<class>edu.emory.first.cache.model.PublicationType</class>
 		<class>edu.emory.first.cache.model.PublicationUserRelationship</class>

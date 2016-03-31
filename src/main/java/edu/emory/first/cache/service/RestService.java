@@ -11,7 +11,7 @@ import java.util.Properties;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -52,11 +52,11 @@ public class RestService {
 		StringBuilder sb = new StringBuilder();
 		sb.append("select distinct u from User u ");
 		sb.append(whereClause);
-		Query query = em.createQuery(sb.toString());
+		TypedQuery<User> query = em.createQuery(sb.toString(), User.class);
 
 		query.setParameter("userName", userName);
 
-		List<User> users = getResultList(query);
+		List<User> users = query.getResultList();
 		return users;
 	}
 
@@ -71,9 +71,9 @@ public class RestService {
 	@Path("/professional-activity-types")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<ProfessionalActivityType> getProfessionalActivityTypes() {
-		Query query = em.createQuery("select p from ProfessionalActivityType p");
+		TypedQuery<ProfessionalActivityType> query = em.createQuery("select p from ProfessionalActivityType p", ProfessionalActivityType.class);
 		query.getResultList();
-		List<ProfessionalActivityType> professionalActivityTypes = getResultList(query);
+		List<ProfessionalActivityType> professionalActivityTypes = query.getResultList();
 		return professionalActivityTypes;
 	}
 
@@ -81,9 +81,8 @@ public class RestService {
 	@Path("/publication-types")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<PublicationType> getPublicationTypes() {
-		Query query = em.createQuery("select p from PublicationType p");
-		query.getResultList();
-		List<PublicationType> publicationTypes = getResultList(query);
+		TypedQuery<PublicationType> query = em.createQuery("select p from PublicationType p", PublicationType.class);
+		List<PublicationType> publicationTypes = query.getResultList();
 		return publicationTypes;
 	}
 
@@ -119,7 +118,7 @@ public class RestService {
 		sb.append("select p from Publication p ");
 		sb.append(whereClause);
 		sb.append("order by p.publicationDate desc");
-		Query query = em.createQuery(sb.toString());
+		TypedQuery<Publication> query = em.createQuery(sb.toString(), Publication.class);
 
 		query.setParameter("userName", userName);
 
@@ -130,7 +129,7 @@ public class RestService {
 			query.setParameter("favorite", favorite);
 		}
 
-		List<Publication> userPublications = getResultList(query);
+		List<Publication> userPublications = query.getResultList();
 		return userPublications;
 	}
 
@@ -160,7 +159,7 @@ public class RestService {
 		sb.append("order by case when (p.reportingDate1 is null and p.reportingDate2 is null) then 2 ");
 	 	sb.append("when p.reportingDate2 is null then 0 ");
 	 	sb.append("else 1 end asc, p.reportingDate2 desc, p.reportingDate1 desc");
-		Query query = em.createQuery(sb.toString());
+		TypedQuery<ProfessionalActivity> query = em.createQuery(sb.toString(), ProfessionalActivity.class);
 
 		query.setParameter("userName", userName);
 
@@ -168,7 +167,7 @@ public class RestService {
 			query.setParameter("typeId", typeId);
 		}
 
-		List<ProfessionalActivity> userProfessionalActivities = getResultList(query);
+		List<ProfessionalActivity> userProfessionalActivities = query.getResultList();
 		return userProfessionalActivities;
 	}
 	
@@ -205,12 +204,6 @@ public class RestService {
 		catch (ParseException e) {
 			return "[Parse Exception Thrown]";
 		}
-	}
-
-	private final <E> List<E> getResultList(Query query) {
-		@SuppressWarnings("unchecked")
-		List<E> list = query.getResultList();
-		return list;
 	}
 
 }

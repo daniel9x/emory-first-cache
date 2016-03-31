@@ -86,9 +86,6 @@ public class User implements Serializable {
 	@OneToMany(mappedBy="user")
 	private List<UserPublicationPreference> userPublicationPreferences;
 
-	@OneToMany(mappedBy="user")
-	private List<ProfessionalActivityUserRelationship> professionalActivityUserRelationships;  
-
 	public Long getId() {
 		return id;
 	}
