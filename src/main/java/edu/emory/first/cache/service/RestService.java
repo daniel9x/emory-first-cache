@@ -173,7 +173,7 @@ public class RestService {
 	
 	@GET
 	@Path("/info")
-	@Produces(MediaType.APPLICATION_JSON) 
+	@Produces("text/html") 
 	public String getBuildNumber() throws IOException, ParseException {
 		String resourceName = "build.properties";
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
